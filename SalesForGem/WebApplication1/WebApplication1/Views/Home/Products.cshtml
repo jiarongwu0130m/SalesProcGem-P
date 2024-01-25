@@ -1,0 +1,30 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "商品基本資料";
+    Layout = "_Layout";
+}
+@model List<ProductsViewModel>
+
+<section class="page-section">
+        <div class="row">
+@{
+    foreach (var product in Model)
+    {
+        <div class="col-3 p-3 mt-2">
+            <div class="card bg-faded h-100">
+                <div class="card-body">
+                    <p class="card-text">名稱：@product.ProductName</p>
+                    <p class="card-text">商品料號：@product.ProductNO</p>
+                    <p class="card-text">單位：@product.Unit</p>
+                    <p class="card-text">廠商貨號：@product.CustomerNumber</p>
+                    <p class="card-text">備註：@product.Unit</p>
+                </div>
+            </div>
+        </div>
+    }
+}
+        </div>
+
+</section>
