@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using WebApplication1.Models.Entity;
+
 namespace WebApplication1
 {
     public class Program
@@ -8,6 +11,10 @@ namespace WebApplication1
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            //資料庫連接
+            builder.Services.AddDbContext<SalesProcGemContext>(opt =>
+            opt.UseSqlServer(builder.Configuration.GetConnectionString("SalesProcGem")));
 
             var app = builder.Build();
 
